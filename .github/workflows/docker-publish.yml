@@ -19,9 +19,9 @@ jobs:
         with:
           ecr: auto
           logout: true
-          username: manxomatt
+          username: 'manxomatt'
           # ${{secrets.DOCKERHUB_USERNAME}}
-          password: dckr_pat_7Zm7g85KBsQYHbqEYAg6d0sRJZQ
+          password: 'dckr_pat_7Zm7g85KBsQYHbqEYAg6d0sRJZQ'
           # ${{secrets.DOCKERHUB_TOKEN}}
       -
         name: Set up Docker Buildx
