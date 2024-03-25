@@ -23,6 +23,24 @@ RUN apk --no-cache add \
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && unzip awscliv2.zip
 RUN ./aws/install && aws --version
 
+RUN rm -rf \
+        awscliv2.zip \
+        aws \
+        /usr/local/aws-cli/v2/*/dist/aws_completer \
+        /usr/local/aws-cli/v2/*/dist/awscli/data/ac.index \
+        /usr/local/aws-cli/v2/*/dist/awscli/examples \
+    && apk --no-cache del \
+        binutils \
+        curl \
+    && rm glibc-${GLIBC_VER}.apk \
+    && rm glibc-bin-${GLIBC_VER}.apk \
+    && rm -rf /var/cache/apk/*
+
+RUN aws --version
+
+RUN sls --version
+
+
 # # jq
 # ENV JQ_VERSION='1.6'
 # RUN wget --no-check-certificate https://raw.githubusercontent.com/stedolan/jq/jq-${JQ_VERSION}/sig/jq-release.key -O /tmp/jq-release.key && \
@@ -35,11 +53,6 @@ RUN ./aws/install && aws --version
 #     rm -f /tmp/jq-release.key && \
 #     rm -f /tmp/jq-linux64.asc && \
 #     rm -f /tmp/jq-linux64
-
-RUN aws --version
-
-RUN sls --version
-
 # FROM node:16.20-alpine
 
 # # Install Serverless Framework
