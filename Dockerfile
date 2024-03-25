@@ -1,4 +1,4 @@
-FROM node:16.20.0-alpine
+FROM node:14.20.0-alpine
 
  RUN npm install -g serverless@2.60.0
 
