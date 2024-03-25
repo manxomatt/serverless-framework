@@ -33,7 +33,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/serverless-framework:latest
+          tags: manxomatt/serverless-framework:latest
 # jobs:
 
   # docker:
