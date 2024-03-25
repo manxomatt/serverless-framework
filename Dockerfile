@@ -3,7 +3,7 @@ FROM node:16.20.0-alpine
  RUN npm install -g serverless@2.60.0
 
 # zip
-RUN apt-get update && apt-get install -y zip && rm -rf /var/lib/apt/lists/*
+# RUN apt-get update && apt-get install -y zip && rm -rf /var/lib/apt/lists/*
 
 ENV GLIBC_VER=2.31-r0
 
