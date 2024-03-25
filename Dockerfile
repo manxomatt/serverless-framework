@@ -11,7 +11,7 @@ ENV GLIBC_VER=2.31-r0
 # and install AWS CLI 2
 RUN apk --no-cache add \
         binutils \
-        curl 
+        curl \
     && curl -sL https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub -o /etc/apk/keys/sgerrand.rsa.pub \
     && curl -sLO https://github.com/sgerrand/alpine-pkg-glibc/releases/download/${GLIBC_VER}/glibc-${GLIBC_VER}.apk 
 
