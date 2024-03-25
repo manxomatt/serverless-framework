@@ -1,4 +1,4 @@
-FROM node:16.20-alpine
+FROM node:16
 
 # Install Serverless Framework
 RUN npm install -g serverless@2.60.0
