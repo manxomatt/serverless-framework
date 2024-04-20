@@ -2,6 +2,7 @@ FROM node:20.12.2-alpine3.19
 
 RUN npm install -g serverless@3.0.0
 
+RUN export NODE_OPTIONS=--openssl-legacy-provider
 RUN apk update && \
     apk add --no-cache --update \
     python3 \
